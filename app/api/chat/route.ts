@@ -7,6 +7,9 @@ export const runtime = "nodejs";
 const client = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
   baseURL: process.env.ANTHROPIC_BASE_URL,
+  defaultHeaders: process.env.ANTHROPIC_BASE_URL
+    ? { "user-agent": "node" }
+    : undefined,
 });
 
 interface Msg { role: "user" | "assistant"; content: string }
