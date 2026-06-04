@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import GlobalAtmosphere from "./components/GlobalAtmosphere";
 import VinylPlayer from "./components/VinylPlayer";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Room 1913",
@@ -15,6 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <GlobalAtmosphere />
         <div className="app-shell">{children}</div>
         <VinylPlayer />
+        <Analytics />
       </body>
     </html>
   );
